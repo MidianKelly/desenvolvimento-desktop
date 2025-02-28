@@ -16,5 +16,19 @@ namespace MultApp.Windows
         {
             InitializeComponent();
         }
+
+        private void chkCrianca_CheckedChanged(object sender, EventArgs e)
+        {
+            chkCrianca.ForeColor = Color.DarkOrange;
+            chkAdulto.ForeColor = Color.DimGray;
+            chkAdulto.Checked = false;
+        }
+
+        private void chkAdulto_CheckedChanged(object sender, EventArgs e)
+        {
+            chkCrianca.ForeColor = Color.DimGray;
+            chkAdulto.ForeColor = Color.DarkOrange;
+            chkCrianca.Checked = false;
+        }
     }
 }
