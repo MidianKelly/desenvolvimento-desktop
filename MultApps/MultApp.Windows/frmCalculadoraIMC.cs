@@ -30,5 +30,21 @@ namespace MultApp.Windows
             chkAdulto.ForeColor = Color.DarkOrange;
             chkCrianca.Checked = false;
         }
+
+        private void chkMasc_CheckedChanged(object sender, EventArgs e)
+        {
+            chkMasc.ForeColor = Color.DarkOrange;
+            chkFem.ForeColor = Color.DimGray;
+            chkFem.Checked = false;
+
+        }
+
+        private void chkFem_CheckedChanged(object sender, EventArgs e)
+        {
+            chkFem.ForeColor = Color.DarkOrange;
+            chkMasc.ForeColor = Color.DimGray;
+            chkMasc.Checked = false;
+
+        }
     }
 }
