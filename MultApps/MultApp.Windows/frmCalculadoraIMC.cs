@@ -22,6 +22,10 @@ namespace MultApp.Windows
             chkCrianca.ForeColor = Color.DarkOrange;
             chkAdulto.ForeColor = Color.DimGray;
             chkAdulto.Checked = false;
+
+            lblIdade.Text = "Abaixo dos 19";
+
+            
         }
 
         private void chkAdulto_CheckedChanged(object sender, EventArgs e)
@@ -29,6 +33,7 @@ namespace MultApp.Windows
             chkCrianca.ForeColor = Color.DimGray;
             chkAdulto.ForeColor = Color.DarkOrange;
             chkCrianca.Checked = false;
+            lblIdade.Text = "Acima dos 19";
         }
 
         private void chkMasc_CheckedChanged(object sender, EventArgs e)
