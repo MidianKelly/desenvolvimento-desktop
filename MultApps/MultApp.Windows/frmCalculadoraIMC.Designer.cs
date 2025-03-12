@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picboxImc = new System.Windows.Forms.PictureBox();
             this.lblResultadoImc = new System.Windows.Forms.Label();
             this.btnCalcule = new System.Windows.Forms.Button();
             this.cmbIdade = new System.Windows.Forms.ComboBox();
@@ -46,7 +47,6 @@
             this.chkCrianca = new System.Windows.Forms.CheckBox();
             this.chkAdulto = new System.Windows.Forms.CheckBox();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.picboxImc = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxImc)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +76,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 426);
             this.panel1.TabIndex = 0;
+            // 
+            // picboxImc
+            // 
+            this.picboxImc.Location = new System.Drawing.Point(412, 219);
+            this.picboxImc.Name = "picboxImc";
+            this.picboxImc.Size = new System.Drawing.Size(246, 207);
+            this.picboxImc.TabIndex = 21;
+            this.picboxImc.TabStop = false;
             // 
             // lblResultadoImc
             // 
@@ -221,7 +229,7 @@
             this.chkMasc.TabIndex = 5;
             this.chkMasc.Text = "Masculino";
             this.chkMasc.UseVisualStyleBackColor = false;
-            this.chkMasc.CheckedChanged += new System.EventHandler(this.chkMasc_CheckedChanged);
+            this.chkMasc.Click += new System.EventHandler(this.chkMasc_CheckedChanged);
             // 
             // chkFem
             // 
@@ -236,7 +244,7 @@
             this.chkFem.TabIndex = 4;
             this.chkFem.Text = "Feminino";
             this.chkFem.UseVisualStyleBackColor = true;
-            this.chkFem.CheckedChanged += new System.EventHandler(this.chkFem_CheckedChanged);
+            this.chkFem.Click += new System.EventHandler(this.chkFem_CheckedChanged);
             // 
             // label1
             // 
@@ -288,14 +296,6 @@
             this.lbl1.Size = new System.Drawing.Size(150, 39);
             this.lbl1.TabIndex = 0;
             this.lbl1.Text = "Selecione";
-            // 
-            // picboxImc
-            // 
-            this.picboxImc.Location = new System.Drawing.Point(449, 172);
-            this.picboxImc.Name = "picboxImc";
-            this.picboxImc.Size = new System.Drawing.Size(246, 207);
-            this.picboxImc.TabIndex = 21;
-            this.picboxImc.TabStop = false;
             // 
             // frmCalculadoraIMC
             // 
