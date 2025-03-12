@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblResultadoImc = new System.Windows.Forms.Label();
+            this.btnCalcule = new System.Windows.Forms.Button();
+            this.cmbIdade = new System.Windows.Forms.ComboBox();
+            this.lblMenorIdade = new System.Windows.Forms.Label();
             this.lblAlturaKg = new System.Windows.Forms.Label();
             this.lblPesoKg = new System.Windows.Forms.Label();
             this.txtAltura = new System.Windows.Forms.TextBox();
@@ -42,16 +46,15 @@
             this.chkCrianca = new System.Windows.Forms.CheckBox();
             this.chkAdulto = new System.Windows.Forms.CheckBox();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.lblMenorIdade = new System.Windows.Forms.Label();
-            this.cmbIdade = new System.Windows.Forms.ComboBox();
-            this.btnCalcule = new System.Windows.Forms.Button();
-            this.lblResultadoImc = new System.Windows.Forms.Label();
+            this.picboxImc = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxImc)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.picboxImc);
             this.panel1.Controls.Add(this.lblResultadoImc);
             this.panel1.Controls.Add(this.btnCalcule);
             this.panel1.Controls.Add(this.cmbIdade);
@@ -73,6 +76,67 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 426);
             this.panel1.TabIndex = 0;
+            // 
+            // lblResultadoImc
+            // 
+            this.lblResultadoImc.AutoSize = true;
+            this.lblResultadoImc.Location = new System.Drawing.Point(20, 317);
+            this.lblResultadoImc.Name = "lblResultadoImc";
+            this.lblResultadoImc.Size = new System.Drawing.Size(16, 13);
+            this.lblResultadoImc.TabIndex = 20;
+            this.lblResultadoImc.Text = "...";
+            // 
+            // btnCalcule
+            // 
+            this.btnCalcule.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnCalcule.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcule.ForeColor = System.Drawing.Color.OldLace;
+            this.btnCalcule.Location = new System.Drawing.Point(20, 277);
+            this.btnCalcule.Name = "btnCalcule";
+            this.btnCalcule.Size = new System.Drawing.Size(94, 26);
+            this.btnCalcule.TabIndex = 18;
+            this.btnCalcule.Text = "Calcule";
+            this.btnCalcule.UseVisualStyleBackColor = false;
+            this.btnCalcule.Click += new System.EventHandler(this.btnCalcule_Click);
+            // 
+            // cmbIdade
+            // 
+            this.cmbIdade.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbIdade.FormattingEnabled = true;
+            this.cmbIdade.Items.AddRange(new object[] {
+            "1 ano",
+            "2 anos ",
+            "3 anos ",
+            "4 anos ",
+            "5 anos ",
+            "6 anos",
+            "7 anos",
+            "8 anos",
+            "9 anos ",
+            "10 anos ",
+            "11 anos ",
+            "12 anos",
+            "13 anos",
+            "14 anos",
+            "15 anos ",
+            "16 anos",
+            "17 anos ",
+            "18 anos "});
+            this.cmbIdade.Location = new System.Drawing.Point(285, 236);
+            this.cmbIdade.Name = "cmbIdade";
+            this.cmbIdade.Size = new System.Drawing.Size(121, 24);
+            this.cmbIdade.TabIndex = 17;
+            // 
+            // lblMenorIdade
+            // 
+            this.lblMenorIdade.AutoSize = true;
+            this.lblMenorIdade.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenorIdade.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblMenorIdade.Location = new System.Drawing.Point(282, 214);
+            this.lblMenorIdade.Name = "lblMenorIdade";
+            this.lblMenorIdade.Size = new System.Drawing.Size(36, 14);
+            this.lblMenorIdade.TabIndex = 15;
+            this.lblMenorIdade.Text = "Idade";
             // 
             // lblAlturaKg
             // 
@@ -225,66 +289,13 @@
             this.lbl1.TabIndex = 0;
             this.lbl1.Text = "Selecione";
             // 
-            // lblMenorIdade
+            // picboxImc
             // 
-            this.lblMenorIdade.AutoSize = true;
-            this.lblMenorIdade.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenorIdade.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblMenorIdade.Location = new System.Drawing.Point(282, 214);
-            this.lblMenorIdade.Name = "lblMenorIdade";
-            this.lblMenorIdade.Size = new System.Drawing.Size(36, 14);
-            this.lblMenorIdade.TabIndex = 15;
-            this.lblMenorIdade.Text = "Idade";
-            // 
-            // cmbIdade
-            // 
-            this.cmbIdade.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbIdade.FormattingEnabled = true;
-            this.cmbIdade.Items.AddRange(new object[] {
-            "1 ano",
-            "2 anos ",
-            "3 anos ",
-            "4 anos ",
-            "5 anos ",
-            "6 anos",
-            "7 anos",
-            "8 anos",
-            "9 anos ",
-            "10 anos ",
-            "11 anos ",
-            "12 anos",
-            "13 anos",
-            "14 anos",
-            "15 anos ",
-            "16 anos",
-            "17 anos ",
-            "18 anos "});
-            this.cmbIdade.Location = new System.Drawing.Point(285, 236);
-            this.cmbIdade.Name = "cmbIdade";
-            this.cmbIdade.Size = new System.Drawing.Size(121, 24);
-            this.cmbIdade.TabIndex = 17;
-            // 
-            // btnCalcule
-            // 
-            this.btnCalcule.BackColor = System.Drawing.Color.Goldenrod;
-            this.btnCalcule.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcule.ForeColor = System.Drawing.Color.OldLace;
-            this.btnCalcule.Location = new System.Drawing.Point(20, 277);
-            this.btnCalcule.Name = "btnCalcule";
-            this.btnCalcule.Size = new System.Drawing.Size(94, 26);
-            this.btnCalcule.TabIndex = 18;
-            this.btnCalcule.Text = "Calcule";
-            this.btnCalcule.UseVisualStyleBackColor = false;
-            this.btnCalcule.Click += new System.EventHandler(this.btnCalcule_Click);
-            // 
-            // lblResultadoImc
-            // 
-            this.lblResultadoImc.AutoSize = true;
-            this.lblResultadoImc.Location = new System.Drawing.Point(20, 317);
-            this.lblResultadoImc.Name = "lblResultadoImc";
-            this.lblResultadoImc.Size = new System.Drawing.Size(16, 13);
-            this.lblResultadoImc.TabIndex = 20;
-            this.lblResultadoImc.Text = "...";
+            this.picboxImc.Location = new System.Drawing.Point(449, 172);
+            this.picboxImc.Name = "picboxImc";
+            this.picboxImc.Size = new System.Drawing.Size(246, 207);
+            this.picboxImc.TabIndex = 21;
+            this.picboxImc.TabStop = false;
             // 
             // frmCalculadoraIMC
             // 
@@ -297,6 +308,7 @@
             this.Text = "frmCalculadoraIMC";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxImc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,5 +333,6 @@
         private System.Windows.Forms.Label lblMenorIdade;
         private System.Windows.Forms.Button btnCalcule;
         private System.Windows.Forms.Label lblResultadoImc;
+        private System.Windows.Forms.PictureBox picboxImc;
     }
 }
