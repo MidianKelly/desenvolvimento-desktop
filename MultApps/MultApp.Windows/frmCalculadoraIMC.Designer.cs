@@ -79,7 +79,7 @@
             // 
             // picboxImc
             // 
-            this.picboxImc.Location = new System.Drawing.Point(412, 219);
+            this.picboxImc.Location = new System.Drawing.Point(469, 191);
             this.picboxImc.Name = "picboxImc";
             this.picboxImc.Size = new System.Drawing.Size(246, 207);
             this.picboxImc.TabIndex = 21;
@@ -112,24 +112,10 @@
             this.cmbIdade.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIdade.FormattingEnabled = true;
             this.cmbIdade.Items.AddRange(new object[] {
-            "1 ano",
-            "2 anos ",
-            "3 anos ",
-            "4 anos ",
-            "5 anos ",
-            "6 anos",
-            "7 anos",
-            "8 anos",
-            "9 anos ",
-            "10 anos ",
-            "11 anos ",
-            "12 anos",
-            "13 anos",
-            "14 anos",
-            "15 anos ",
-            "16 anos",
-            "17 anos ",
-            "18 anos "});
+            "2 até 5",
+            "6 até 10",
+            "11 até 15",
+            "16 até 18"});
             this.cmbIdade.Location = new System.Drawing.Point(285, 236);
             this.cmbIdade.Name = "cmbIdade";
             this.cmbIdade.Size = new System.Drawing.Size(121, 24);

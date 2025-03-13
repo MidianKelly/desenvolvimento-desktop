@@ -25,7 +25,7 @@ namespace MultApp.Windows
 
         public const string CriancaAbaixoDoNormal = "https://abeso.org.br/wp-content/uploads/2019/12/imc_c_04.png";
         public const string CriancaNormal = "https://abeso.org.br/wp-content/uploads/2019/12/imc_c_03.png";
-        public const string CriancaSobrepeso = "https://abeso.org.br/wp-content/uploads/2019/12/imc_c_02";
+        public const string CriancaSobrepeso = "https://abeso.org.br/wp-content/uploads/2019/12/imc_c_02.png";
         public const string CriancaObesidade = "https://abeso.org.br/wp-content/uploads/2019/12/imc_c_01.png";
        
     }
