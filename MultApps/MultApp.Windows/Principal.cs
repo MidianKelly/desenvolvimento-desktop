@@ -15,11 +15,27 @@ namespace MultApp.Windows
         public Principal()
         {
             InitializeComponent();
+
         }
+
 
         private void MenuCalculadoraImc_Click(object sender, EventArgs e)
         {
+
             var form = new frmCalculadoraIMC();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void Principal_Shown(object sender, EventArgs e)
+        {
+            var loading = new SplashScreen();
+            loading.ShowDialog();
+        }
+
+        private void calculadoraAposentadoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new frmCalculadoraAposentadoria ();
             form.MdiParent = this;
             form.Show();
         }
