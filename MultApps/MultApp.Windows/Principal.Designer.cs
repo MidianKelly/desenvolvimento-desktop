@@ -31,6 +31,7 @@
             this.menuStripPrincipal = new System.Windows.Forms.MenuStrip();
             this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuCalculadoraImc = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculadoraAposentadoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@
             // calculadoraToolStripMenuItem
             // 
             this.calculadoraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuCalculadoraImc});
+            this.MenuCalculadoraImc,
+            this.calculadoraAposentadoriaToolStripMenuItem});
             this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
             this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.calculadoraToolStripMenuItem.Text = "Calculadora";
@@ -55,9 +57,16 @@
             // MenuCalculadoraImc
             // 
             this.MenuCalculadoraImc.Name = "MenuCalculadoraImc";
-            this.MenuCalculadoraImc.Size = new System.Drawing.Size(180, 22);
+            this.MenuCalculadoraImc.Size = new System.Drawing.Size(217, 22);
             this.MenuCalculadoraImc.Text = "Calculadora IMC";
             this.MenuCalculadoraImc.Click += new System.EventHandler(this.MenuCalculadoraImc_Click);
+            // 
+            // calculadoraAposentadoriaToolStripMenuItem
+            // 
+            this.calculadoraAposentadoriaToolStripMenuItem.Name = "calculadoraAposentadoriaToolStripMenuItem";
+            this.calculadoraAposentadoriaToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.calculadoraAposentadoriaToolStripMenuItem.Text = "Calculadora Aposentadoria";
+            this.calculadoraAposentadoriaToolStripMenuItem.Click += new System.EventHandler(this.calculadoraAposentadoriaToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -71,6 +80,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Shown += new System.EventHandler(this.Principal_Shown);
             this.menuStripPrincipal.ResumeLayout(false);
             this.menuStripPrincipal.PerformLayout();
             this.ResumeLayout(false);
@@ -83,5 +93,6 @@
         private System.Windows.Forms.MenuStrip menuStripPrincipal;
         private System.Windows.Forms.ToolStripMenuItem calculadoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuCalculadoraImc;
+        private System.Windows.Forms.ToolStripMenuItem calculadoraAposentadoriaToolStripMenuItem;
     }
 }
