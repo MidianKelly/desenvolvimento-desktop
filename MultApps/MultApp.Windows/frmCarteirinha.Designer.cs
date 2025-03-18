@@ -32,7 +32,7 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.Label();
-            this.txtIdade = new System.Windows.Forms.TextBox();
+            this.txtCpf = new System.Windows.Forms.TextBox();
             this.lblNascimeno = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -86,13 +86,13 @@
             this.lblCpf.TabIndex = 3;
             this.lblCpf.Text = "CPF:";
             // 
-            // txtIdade
+            // txtCpf
             // 
-            this.txtIdade.Location = new System.Drawing.Point(31, 224);
-            this.txtIdade.Multiline = true;
-            this.txtIdade.Name = "txtIdade";
-            this.txtIdade.Size = new System.Drawing.Size(261, 20);
-            this.txtIdade.TabIndex = 4;
+            this.txtCpf.Location = new System.Drawing.Point(31, 224);
+            this.txtCpf.Multiline = true;
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(261, 20);
+            this.txtCpf.TabIndex = 4;
             // 
             // lblNascimeno
             // 
@@ -129,7 +129,7 @@
             // 
             this.lblInformacao.AutoSize = true;
             this.lblInformacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInformacao.Location = new System.Drawing.Point(254, 258);
+            this.lblInformacao.Location = new System.Drawing.Point(277, 258);
             this.lblInformacao.Name = "lblInformacao";
             this.lblInformacao.Size = new System.Drawing.Size(23, 16);
             this.lblInformacao.TabIndex = 7;
@@ -197,7 +197,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lblNascimeno);
-            this.Controls.Add(this.txtIdade);
+            this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.lblCpf);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
@@ -219,7 +219,7 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblCpf;
-        private System.Windows.Forms.TextBox txtIdade;
+        private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.Label lblNascimeno;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Panel panel1;

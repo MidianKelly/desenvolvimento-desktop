@@ -22,7 +22,7 @@ namespace MultApp.Windows
             #region Inserir nome na carteirinha
 
             var nome = txtNome.Text;
-            lblNomeResultado.Text = $@"Nome:{nome}"; ;
+            lblNomeResultado.Text = $@"Nome:{nome}";
 
             #endregion
 
@@ -33,25 +33,81 @@ namespace MultApp.Windows
             var idade = hoje - nascimento.Year;
 
             lblIdade.Text = $@"Idade:{idade} anos";
-            
+
 
             if (idade < 12)
             {
-              
-               pictureBox1.Load (CarteirinhaImagens.Criança);
-               lblInformacao.Text = $@"CRIANÇA";
-               lblInformacao.Visible = true;
-               panel1.BackColor = Color.Azure;
 
+                pictureBox1.Load(CarteirinhaImagens.Criança);
+                lblInformacao.Text = $@"CRIANÇA";
+                lblInformacao.Visible = true;
+                panel1.BackColor = Color.Azure;
 
+                var cpf = txtCpf.Text;
+                string cpfOfuscado = OfuscarCPF(cpf);
+                lblResultadoCpf.Text = $"CPF: {cpfOfuscado}";
             }
+             else if (idade <= 12 )
+            {
 
+                pictureBox1.Load(CarteirinhaImagens.Jovens);
+                lblInformacao.Text = $@"JOVENS";
+                lblInformacao.Visible = true;
+                panel1.BackColor = Color.Yellow;
 
+                var cpf = txtCpf.Text;
+                string cpfOfuscado = OfuscarCPF(cpf);
+                lblResultadoCpf.Text = $"CPF: {cpfOfuscado}";
+            }
+            else if (idade <= 18)
+            {
 
+                pictureBox1.Load(CarteirinhaImagens.Jovens);
+                lblInformacao.Text = $@"JOVENS";
+                lblInformacao.Visible = true;
+                panel1.BackColor = Color.Yellow;
 
+                var cpf = txtCpf.Text;
+                string cpfOfuscado = OfuscarCPF(cpf);
+                lblResultadoCpf.Text = $"CPF: {cpfOfuscado}";
+            }
+            else if ( idade <= 60)
+            {
+                pictureBox1.Load(CarteirinhaImagens.Adultos);
+                lblInformacao.Text = $@"ADULTOS";
+                lblInformacao.Visible = true;
+                panel1.BackColor = Color.MediumPurple;
+
+                var cpf = txtCpf.Text;
+                string cpfOfuscado = OfuscarCPF(cpf);
+                lblResultadoCpf.Text = $"CPF: {cpfOfuscado}";
+            }
+            else
+            {
+                pictureBox1.Load(CarteirinhaImagens.Idosos);
+                lblInformacao.Text = $@"IDOSOS";
+                lblInformacao.Visible = true;
+                panel1.BackColor = Color.LightGreen;
+
+                var cpf = txtCpf.Text;
+                string cpfOfuscado = OfuscarCPF(cpf);
+                lblResultadoCpf.Text = $"CPF: {cpfOfuscado}";
+            }
             #endregion
         }
+        private string OfuscarCPF(string cpf)
+        {
+           
+            // Garante que o CPF tem 11 caracteres
+            if (cpf.Length != 11)
+                return "CPF inválido";
 
-       
+            // Pega os números do meio
+            string parte1 = cpf.Substring(3, 3);
+            string parte2 = cpf.Substring(6, 3);
+
+            // Retorna o CPF ofuscado
+            return $"***.{parte1}.{parte2}.***";
+        }
     }
 }
