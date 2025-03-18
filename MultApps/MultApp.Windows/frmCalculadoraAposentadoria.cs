@@ -27,7 +27,7 @@ namespace MultApp.Windows
             var anoscontribuicao = int.Parse(txtContribuiçao.Text);
 
             // Fazer o calculo
-            var aposentadoria =  idade = anoscontribuicao;
+            var aposentadoria =  idade - anoscontribuicao;
             #region Por tempo de contribuição
             if (cmbGenero.SelectedIndex == 0)
             {
