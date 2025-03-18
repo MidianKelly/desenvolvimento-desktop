@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarteirinhaImagens.cs" />
+    <Compile Include="ClassificacaoPessoas.cs" />
     <Compile Include="frmCalculadoraAposentadoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +66,12 @@
     </Compile>
     <Compile Include="frmCalculadoraIMC.Designer.cs">
       <DependentUpon>frmCalculadoraIMC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCarteirinha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCarteirinha.Designer.cs">
+      <DependentUpon>frmCarteirinha.cs</DependentUpon>
     </Compile>
     <Compile Include="ImcImagens.cs" />
     <Compile Include="Principal.cs">
@@ -85,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCalculadoraIMC.resx">
       <DependentUpon>frmCalculadoraIMC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCarteirinha.resx">
+      <DependentUpon>frmCarteirinha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
