@@ -52,9 +52,10 @@
             this.label1.BackColor = System.Drawing.Color.FloralWhite;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(119, 21);
+            this.label1.Location = new System.Drawing.Point(159, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(559, 126);
+            this.label1.Size = new System.Drawing.Size(696, 156);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gerador de carteirinha de acesso \r\n                   ao parque\r\n\r\n";
             // 
@@ -62,54 +63,60 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(25, 127);
+            this.lblNome.Location = new System.Drawing.Point(33, 156);
+            this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(55, 20);
+            this.lblNome.Size = new System.Drawing.Size(70, 25);
             this.lblNome.TabIndex = 1;
             this.lblNome.Text = "Nome:";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(29, 150);
+            this.txtNome.Location = new System.Drawing.Point(39, 185);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(263, 22);
+            this.txtNome.Size = new System.Drawing.Size(349, 26);
             this.txtNome.TabIndex = 2;
             // 
             // lblCpf
             // 
             this.lblCpf.AutoSize = true;
             this.lblCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpf.Location = new System.Drawing.Point(26, 201);
+            this.lblCpf.Location = new System.Drawing.Point(35, 247);
+            this.lblCpf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(44, 20);
+            this.lblCpf.Size = new System.Drawing.Size(58, 25);
             this.lblCpf.TabIndex = 3;
             this.lblCpf.Text = "CPF:";
             // 
             // txtCpf
             // 
-            this.txtCpf.Location = new System.Drawing.Point(31, 224);
+            this.txtCpf.Location = new System.Drawing.Point(41, 276);
+            this.txtCpf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCpf.Multiline = true;
             this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(261, 20);
+            this.txtCpf.Size = new System.Drawing.Size(347, 24);
             this.txtCpf.TabIndex = 4;
             // 
             // lblNascimeno
             // 
             this.lblNascimeno.AutoSize = true;
             this.lblNascimeno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNascimeno.Location = new System.Drawing.Point(25, 275);
+            this.lblNascimeno.Location = new System.Drawing.Point(33, 338);
+            this.lblNascimeno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNascimeno.Name = "lblNascimeno";
-            this.lblNascimeno.Size = new System.Drawing.Size(158, 20);
+            this.lblNascimeno.Size = new System.Drawing.Size(194, 25);
             this.lblNascimeno.TabIndex = 5;
             this.lblNascimeno.Text = "Data de Nascimento:\r\n";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(31, 298);
+            this.dateTimePicker1.Location = new System.Drawing.Point(41, 367);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(261, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(347, 22);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // panel1
@@ -120,18 +127,20 @@
             this.panel1.Controls.Add(this.lblResultadoCpf);
             this.panel1.Controls.Add(this.lblNomeResultado);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(401, 141);
+            this.panel1.Location = new System.Drawing.Point(535, 174);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(437, 296);
+            this.panel1.Size = new System.Drawing.Size(583, 364);
             this.panel1.TabIndex = 7;
             // 
             // lblInformacao
             // 
             this.lblInformacao.AutoSize = true;
             this.lblInformacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInformacao.Location = new System.Drawing.Point(277, 258);
+            this.lblInformacao.Location = new System.Drawing.Point(245, 342);
+            this.lblInformacao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInformacao.Name = "lblInformacao";
-            this.lblInformacao.Size = new System.Drawing.Size(23, 16);
+            this.lblInformacao.Size = new System.Drawing.Size(33, 20);
             this.lblInformacao.TabIndex = 7;
             this.lblInformacao.Text = "    ";
             this.lblInformacao.Visible = false;
@@ -140,9 +149,10 @@
             // 
             this.lblIdade.AutoSize = true;
             this.lblIdade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdade.Location = new System.Drawing.Point(12, 199);
+            this.lblIdade.Location = new System.Drawing.Point(16, 209);
+            this.lblIdade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIdade.Name = "lblIdade";
-            this.lblIdade.Size = new System.Drawing.Size(50, 20);
+            this.lblIdade.Size = new System.Drawing.Size(61, 25);
             this.lblIdade.TabIndex = 6;
             this.lblIdade.Text = "Idade";
             // 
@@ -150,9 +160,10 @@
             // 
             this.lblResultadoCpf.AutoSize = true;
             this.lblResultadoCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultadoCpf.Location = new System.Drawing.Point(12, 111);
+            this.lblResultadoCpf.Location = new System.Drawing.Point(16, 164);
+            this.lblResultadoCpf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblResultadoCpf.Name = "lblResultadoCpf";
-            this.lblResultadoCpf.Size = new System.Drawing.Size(44, 20);
+            this.lblResultadoCpf.Size = new System.Drawing.Size(58, 25);
             this.lblResultadoCpf.TabIndex = 4;
             this.lblResultadoCpf.Text = "CPF:";
             // 
@@ -160,9 +171,10 @@
             // 
             this.lblNomeResultado.AutoSize = true;
             this.lblNomeResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeResultado.Location = new System.Drawing.Point(11, 29);
+            this.lblNomeResultado.Location = new System.Drawing.Point(16, 122);
+            this.lblNomeResultado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomeResultado.Name = "lblNomeResultado";
-            this.lblNomeResultado.Size = new System.Drawing.Size(55, 20);
+            this.lblNomeResultado.Size = new System.Drawing.Size(70, 25);
             this.lblNomeResultado.TabIndex = 2;
             this.lblNomeResultado.Text = "Nome:";
             // 
@@ -170,18 +182,20 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.OldLace;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(178, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(237, 36);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(218, 245);
+            this.pictureBox1.Size = new System.Drawing.Size(291, 302);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // btnGerarCarteirinha
             // 
-            this.btnGerarCarteirinha.Location = new System.Drawing.Point(29, 362);
+            this.btnGerarCarteirinha.Location = new System.Drawing.Point(39, 446);
+            this.btnGerarCarteirinha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGerarCarteirinha.Name = "btnGerarCarteirinha";
-            this.btnGerarCarteirinha.Size = new System.Drawing.Size(143, 33);
+            this.btnGerarCarteirinha.Size = new System.Drawing.Size(191, 41);
             this.btnGerarCarteirinha.TabIndex = 7;
             this.btnGerarCarteirinha.Text = "Gerar Carteirinha";
             this.btnGerarCarteirinha.UseVisualStyleBackColor = true;
@@ -189,10 +203,10 @@
             // 
             // frmCarteirinha
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
-            this.ClientSize = new System.Drawing.Size(878, 516);
+            this.ClientSize = new System.Drawing.Size(1171, 635);
             this.Controls.Add(this.btnGerarCarteirinha);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePicker1);
@@ -203,6 +217,7 @@
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCarteirinha";
             this.Text = "frmCarteirinha";
             this.panel1.ResumeLayout(false);
