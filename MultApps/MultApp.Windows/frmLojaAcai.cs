@@ -6,6 +6,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace MultApp.Windows
 {
     public partial class frmLojaAcai : Form
     {
+
         public frmLojaAcai()
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace MultApp.Windows
             btnAcaiGrande.ForeColor = SystemColors.ControlText;
             btnAcaiFamilia.ForeColor = SystemColors.ControlText;
 
+            listBoxTotal.Items.Add("R$15,00");
         }
 
         private void btnAcaiMedio_Click(object sender, EventArgs e)
@@ -40,11 +43,13 @@ namespace MultApp.Windows
             btnAcaiPequeno.ForeColor = SystemColors.ControlText;
             btnAcaiGrande.ForeColor = SystemColors.ControlText;
             btnAcaiFamilia.ForeColor = SystemColors.ControlText;
+            listBoxTotal.Items.Add("R$20,00");
         }
 
         private void btnAcaiGrande_Click(object sender, EventArgs e)
         {
             listBoxTamanhoAcai.Items.Add("Açaí 700ml");
+            listBoxTotal.Items.Add("R$25,00");
             listBoxTotal.Items.Add("R$25,00");
             btnAcaiGrande.ForeColor = Color.MediumPurple;
 
@@ -57,6 +62,7 @@ namespace MultApp.Windows
         {
             listBoxTamanhoAcai.Items.Add("Açaí 1,5l");
             listBoxTotal.Items.Add("R$35,00");
+            listBoxTotal.Items.Add("R$35,00");
             btnAcaiFamilia.ForeColor = Color.MediumPurple;
 
             btnAcaiPequeno.ForeColor = SystemColors.ControlText;
@@ -65,6 +71,7 @@ namespace MultApp.Windows
         }
 
         #endregion
+        #region Complementos
 
         #region Complementos
         private void NumericGranola_ValueChanged(object sender, EventArgs e)
@@ -75,10 +82,13 @@ namespace MultApp.Windows
             {
                 listBoxComplementos.Items.Add($"Granola - {NumericGranola.Value}");
                 listBoxTotal.Items.Add("Granola - R$1,50");
+                listBoxTotal.Items.Add("Granola R$3,00");
             }
             else
             {
                 listBoxComplementos.Items.Remove($"Granola - {NumericGranola.Value + 1}");
+                listBoxTotal.Items.Remove("Granola R$3,00");
+            }
                 listBoxTotal.Items.Remove("Granola - R$1,50");
             }           
         }
@@ -90,10 +100,12 @@ namespace MultApp.Windows
             {
                 listBoxComplementos.Items.Add($"Leite em Pó - {numericLeiteEmPo.Value}");
                 listBoxTotal.Items.Add("Leite em pó - R$2,50");
+                listBoxTotal.Items.Add("Leite em Pó R$4,00");
             }
             else
             {
                 listBoxComplementos.Items.Remove($"Leite em Pó - {numericLeiteEmPo.Value + 1}");
+                listBoxTotal.Items.Add("Leite em Pó R$4,00");
                 listBoxTotal.Items.Remove("Leite em pó - R$2,50");
             }
         }
@@ -105,29 +117,36 @@ namespace MultApp.Windows
             {
                 listBoxComplementos.Items.Add($"Chocobol - {numericChocobol.Value}");
                 listBoxTotal.Items.Add("Chocobol - R$ 1,00");
+                listBoxTotal.Items.Add("Chocobol R$3,00");
             }
             else
             {
                 listBoxComplementos.Items.Remove($"Chocobol - {numericChocobol.Value + 1}");
+                listBoxTotal.Items.Remove("Chocobol R$3,00");
+                
                 listBoxTotal.Items.Remove("Chocobol - R$ 1,00");
             }
         }
-
+        
         private void numericGotasChocolate_ValueChanged(object sender, EventArgs e)
         {
             if (LimitarComplementos()) return;
             if (numericGotasChocolate.Value > 0)
             {
                 listBoxComplementos.Items.Add($"Gotas de Chocolate - {numericGotasChocolate.Value}");
+                listBoxTotal.Items.Add("Gotas de Chocolate R$5,00");
                 listBoxTotal.Items.Add("Chocobol - R$ 1,60");
             }
             else
             {
                 listBoxComplementos.Items.Remove($"Gotas de Chocolate - {numericGotasChocolate.Value + 1}");
+                listBoxTotal.Items.Add("Chocobol R$5,00");
                 listBoxTotal.Items.Remove("Chocobol - R$ 1,60");
 
             }
         }
+        #endregion
+        #region Frutas
         #endregion
 
         #region Frutas
@@ -138,25 +157,33 @@ namespace MultApp.Windows
             if (numericBanana.Value > 0)
             {
                 listBoxFrutas.Items.Add($"Banana - {numericBanana.Value}");
+                listBoxTotal.Items.Add("Banana R$1,00");
+                listBoxFrutas.Items.Add($"Banana - {numericBanana.Value}");
                 listBoxTotal.Items.Add("Banana - R$1,00");
             }
             else
             {
                 listBoxFrutas.Items.Remove($"Banana - {numericBanana.Value + 1}");
+                listBoxTotal.Items.Remove("Banana R$1,00");
+                listBoxFrutas.Items.Remove($"Banana - {numericBanana.Value + 1}");
                 listBoxTotal.Items.Remove("Banana - R$1,00");
             }
         }
-
+        
         private void numericMorango_ValueChanged(object sender, EventArgs e)
         {
             if (LimitarFrutas()) return;
             if (numericMorango.Value > 0)
             {
                 listBoxFrutas.Items.Add($"Morango - {numericMorango.Value }");
+                listBoxTotal.Items.Add("Morango R$1,50");
+                listBoxFrutas.Items.Add($"Morango - {numericMorango.Value }");
                 listBoxTotal.Items.Add("Morango - R$2,00");
             }
             else
             {
+                listBoxFrutas.Items.Remove($"Morango - {numericMorango.Value + 1}");
+                listBoxTotal.Items.Remove ("Morango R$1,50");
                 listBoxFrutas.Items.Remove($"Morango - {numericMorango.Value + 1}");
                 listBoxTotal.Items.Remove("Morango - R$2,00");
             }
@@ -168,10 +195,14 @@ namespace MultApp.Windows
             if (numericManga.Value > 0)
             {
                 listBoxFrutas.Items.Add($"Manga - {numericManga.Value}");
+                listBoxTotal.Items.Add("Manga R$0,50");
+                listBoxFrutas.Items.Add($"Manga - {numericManga.Value}");
                 listBoxTotal.Items.Add("Manga - R$0,50");
             }
             else
             {
+                listBoxFrutas.Items.Remove($"Manga - {numericManga.Value + 1}");
+                listBoxTotal.Items.Remove("Manga R$0,50");
                 listBoxFrutas.Items.Remove($"Manga - {numericManga.Value + 1}");
                 listBoxTotal.Items.Remove("Manga - R$0,50");
             }
@@ -183,14 +214,20 @@ namespace MultApp.Windows
             if (numericUva.Value > 0)
             {
                 listBoxFrutas.Items.Add($"Uva - {numericUva.Value}");
+                listBoxTotal.Items.Add("Uva - R$1,50");
+                listBoxFrutas.Items.Add($"Uva - {numericUva.Value}");
                 listBoxTotal.Items.Add("Uva - R$1,70");
             }
             else
             {
                 listBoxFrutas.Items.Remove($"Uva - {numericUva.Value + 1  }");
                  listBoxTotal.Items.Remove("Uva - R$1,70");
+                listBoxFrutas.Items.Remove($"Uva - {numericUva.Value + 1  }");
+                listBoxTotal.Items.Remove("Uva - R$1,50");
             }
         }
+        #endregion
+        #region Cobertura
         #endregion
 
         #region Cobertura
@@ -213,8 +250,10 @@ namespace MultApp.Windows
         {
             if (LimitarCobertura()) return;
             if (numericCaramelo.Value > 0)
+            if (numericCaramelo.Value > 0 && numericCaramelo.Value < 3)
             {
                 listBoxCobertura.Items.Add($"Caramelo - {numericCaramelo.Value}");
+               
                 listBoxTotal.Items.Add("Cobertura de Caramelo - R$1,05");
             }
             else
@@ -252,6 +291,41 @@ namespace MultApp.Windows
                 listBoxCobertura.Items.Remove($"Morango - {numericMorangoCobertura.Value + 1}");
                 listBoxTotal.Items.Remove("Leite Condensado - R$1,35");
             }
+        }
+        #endregion
+
+        private bool LimitarItens()
+        {
+            if (listBoxComplementos.Items.Count > 3)
+            {
+                MessageBox.Show("Limite de itens atingidos");
+                return true;
+            }
+            return false;
+        }
+        private bool LimitarItens2()
+        {
+            if (listBoxFrutas.Items.Count > 2)
+            {
+                MessageBox.Show("Limite de itens atingidos");
+                return true;
+            }
+            return false;
+        }
+        private bool LimitarItens3()
+        {
+            if (listBoxCobertura.Items.Count > 2)
+            {
+                listBoxCobertura.Items.Add("Limite de itens atingidos");
+                return true;
+            }
+            return false;
+        }
+
+    
+        private void btnSomar_Click(object sender, EventArgs e)
+        {
+
         }
 
         #endregion 
