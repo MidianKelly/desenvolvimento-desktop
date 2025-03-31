@@ -42,18 +42,7 @@ namespace MultApp.Windows
                 lblInformacao.Text = $@"CRIANÇA";
                 lblInformacao.Visible = true;
                 panel1.BackColor = Color.Azure;
-
-                var cpf = txtCpf.Text;
-                string cpfOfuscado = OfuscarCPF(cpf);
-                lblResultadoCpf.Text = $"CPF: {cpfOfuscado}";
-            }
-             else if (idade <= 12 )
-            {
-
-                pictureBox1.Load(CarteirinhaImagens.Jovens);
-                lblInformacao.Text = $@"JOVENS";
-                lblInformacao.Visible = true;
-                panel1.BackColor = Color.Yellow;
+                pictureBox1.BackColor = Color.Azure;
 
                 var cpf = txtCpf.Text;
                 string cpfOfuscado = OfuscarCPF(cpf);
@@ -65,7 +54,8 @@ namespace MultApp.Windows
                 pictureBox1.Load(CarteirinhaImagens.Jovens);
                 lblInformacao.Text = $@"JOVENS";
                 lblInformacao.Visible = true;
-                panel1.BackColor = Color.Yellow;
+                panel1.BackColor = Color.LemonChiffon;
+                pictureBox1.BackColor = Color.LemonChiffon;
 
                 var cpf = txtCpf.Text;
                 string cpfOfuscado = OfuscarCPF(cpf);
@@ -76,7 +66,8 @@ namespace MultApp.Windows
                 pictureBox1.Load(CarteirinhaImagens.Adultos);
                 lblInformacao.Text = $@"ADULTOS";
                 lblInformacao.Visible = true;
-                panel1.BackColor = Color.MediumPurple;
+                panel1.BackColor = Color.Plum;
+                pictureBox1.BackColor = Color.Plum;
 
                 var cpf = txtCpf.Text;
                 string cpfOfuscado = OfuscarCPF(cpf);
@@ -87,7 +78,9 @@ namespace MultApp.Windows
                 pictureBox1.Load(CarteirinhaImagens.Idosos);
                 lblInformacao.Text = $@"IDOSOS";
                 lblInformacao.Visible = true;
-                panel1.BackColor = Color.LightGreen;
+                panel1.BackColor = Color.Honeydew;
+                pictureBox1.BackColor = Color.Honeydew;
+
 
                 var cpf = txtCpf.Text;
                 string cpfOfuscado = OfuscarCPF(cpf);

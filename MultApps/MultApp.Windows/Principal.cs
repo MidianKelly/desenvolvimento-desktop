@@ -18,7 +18,6 @@ namespace MultApp.Windows
 
         }
 
-
         private void MenuCalculadoraImc_Click(object sender, EventArgs e)
         {
 
@@ -38,6 +37,19 @@ namespace MultApp.Windows
             var form = new frmCalculadoraAposentadoria ();
             form.MdiParent = this;
             form.Show();
+        }
+
+        private void carteirinhaDoParqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new frmCarteirinha();
+            form.MdiParent = this;
+            form.Show();
+        }
+ 
+        private void lojaDeAçaíToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var form = new frmLojaAcai();
+            form.ShowDialog();
         }
     }
 }
