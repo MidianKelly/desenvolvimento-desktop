@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultApp.Windows", "MultApp.Windows\MultApp.Windows.csproj", "{71E281C6-5A07-45E5-9C91-F9DB8F08F7EA}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CONTROLLER", "CONTROLLER", "{E82A0B0C-6D0D-49BB-8DA3-38E16056AAF4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MODEL", "MODEL", "{8141F7E5-C604-457F-892E-7E64A82B6A5B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VIEW", "VIEW", "{B1710980-0A18-4202-8347-EF4622CDC8AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiApps.Models", "MultiApps.Models\MultiApps.Models.csproj", "{DFD18A6A-7AE4-4E37-9326-9315DC3DC16B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiApps.Controller", "CONTROLLER\MultiApps.Controller\MultiApps.Controller.csproj", "{D271FAD7-A18A-4A20-8D28-3DB3A02A6B7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiApps.Controller", "MultiApps.Controller\MultiApps.Controller.csproj", "{D271FAD7-A18A-4A20-8D28-3DB3A02A6B7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiApps.Models", "MODEL\MultiApps.Models\MultiApps.Models.csproj", "{DFD18A6A-7AE4-4E37-9326-9315DC3DC16B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultApp.Windows", "VIEW\MultApp.Windows\MultApp.Windows.csproj", "{71E281C6-5A07-45E5-9C91-F9DB8F08F7EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,26 +21,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{71E281C6-5A07-45E5-9C91-F9DB8F08F7EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{71E281C6-5A07-45E5-9C91-F9DB8F08F7EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{71E281C6-5A07-45E5-9C91-F9DB8F08F7EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{71E281C6-5A07-45E5-9C91-F9DB8F08F7EA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DFD18A6A-7AE4-4E37-9326-9315DC3DC16B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DFD18A6A-7AE4-4E37-9326-9315DC3DC16B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DFD18A6A-7AE4-4E37-9326-9315DC3DC16B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DFD18A6A-7AE4-4E37-9326-9315DC3DC16B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D271FAD7-A18A-4A20-8D28-3DB3A02A6B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D271FAD7-A18A-4A20-8D28-3DB3A02A6B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D271FAD7-A18A-4A20-8D28-3DB3A02A6B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D271FAD7-A18A-4A20-8D28-3DB3A02A6B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFD18A6A-7AE4-4E37-9326-9315DC3DC16B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFD18A6A-7AE4-4E37-9326-9315DC3DC16B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFD18A6A-7AE4-4E37-9326-9315DC3DC16B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFD18A6A-7AE4-4E37-9326-9315DC3DC16B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71E281C6-5A07-45E5-9C91-F9DB8F08F7EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71E281C6-5A07-45E5-9C91-F9DB8F08F7EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71E281C6-5A07-45E5-9C91-F9DB8F08F7EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71E281C6-5A07-45E5-9C91-F9DB8F08F7EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{71E281C6-5A07-45E5-9C91-F9DB8F08F7EA} = {B1710980-0A18-4202-8347-EF4622CDC8AB}
-		{DFD18A6A-7AE4-4E37-9326-9315DC3DC16B} = {8141F7E5-C604-457F-892E-7E64A82B6A5B}
 		{D271FAD7-A18A-4A20-8D28-3DB3A02A6B7E} = {E82A0B0C-6D0D-49BB-8DA3-38E16056AAF4}
+		{DFD18A6A-7AE4-4E37-9326-9315DC3DC16B} = {8141F7E5-C604-457F-892E-7E64A82B6A5B}
+		{71E281C6-5A07-45E5-9C91-F9DB8F08F7EA} = {B1710980-0A18-4202-8347-EF4622CDC8AB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5DE3BF2-3D26-47A5-9F52-FC91238872A0}
