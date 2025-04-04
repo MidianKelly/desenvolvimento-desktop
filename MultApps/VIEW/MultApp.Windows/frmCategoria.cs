@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace MultApp.Windows
         public frmCategoria()
         {
             InitializeComponent();
+            CarregarTodasCategorias();
         }
 
         
@@ -39,6 +41,51 @@ namespace MultApp.Windows
             {
                 MessageBox.Show("Erro ao cadastrar categoria");
             }
+            CarregarTodasCategorias();
+
+        }
+        private void CarregarTodasCategorias()
+        {
+            var categoriaRepository = new CategoriaRepository();
+            var listaDeCategorias = categoriaRepository.ListarTodasCategorias();
+
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.Columns.Clear();
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Id",
+                HeaderText = "id"
+            }
+            );
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Nome",
+                HeaderText = "Nome Categoria"
+            }
+            );
+           
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "DataCadastro",
+                HeaderText = "Data de Cadastro"
+            }
+           );
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "DataAlteracao",
+                HeaderText = "Data de Alteração"
+            }
+           );
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Status",
+                HeaderText = "Status"
+                
+            }
+         );
+            dataGridView1.DataSource = listaDeCategorias;
         }
     }
 }
