@@ -41,6 +41,7 @@
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnObterCategoria = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -154,7 +155,7 @@
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.Pink;
             this.btnSalvar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(617, 127);
+            this.btnSalvar.Location = new System.Drawing.Point(786, 127);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(103, 38);
             this.btnSalvar.TabIndex = 11;
@@ -165,6 +166,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox1.Controls.Add(this.btnObterCategoria);
             this.groupBox1.Controls.Add(this.lblNome);
             this.groupBox1.Controls.Add(this.btnSalvar);
             this.groupBox1.Controls.Add(this.lblId);
@@ -183,6 +185,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastrar nova categoria";
             // 
+            // btnObterCategoria
+            // 
+            this.btnObterCategoria.BackColor = System.Drawing.Color.Pink;
+            this.btnObterCategoria.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObterCategoria.Location = new System.Drawing.Point(632, 127);
+            this.btnObterCategoria.Name = "btnObterCategoria";
+            this.btnObterCategoria.Size = new System.Drawing.Size(148, 38);
+            this.btnObterCategoria.TabIndex = 12;
+            this.btnObterCategoria.Text = " Teste obter por ID\r\n\r\n";
+            this.btnObterCategoria.UseVisualStyleBackColor = false;
+        
+            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Pink;
@@ -192,6 +206,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(957, 150);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // frmCategoria
             // 
@@ -228,5 +243,6 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnObterCategoria;
     }
 }

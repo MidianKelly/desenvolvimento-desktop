@@ -42,5 +42,21 @@ namespace MultiApps.Models.Repositories1
             }
 
         }
+        public Categoria MostrarCategoriaPorID(int id)
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = @"SELECT id, nome, data_criacao, data_alteracao, status *
+                                  FROM categoria
+                                  WHERE id = '2'";
+                
+                var parametros = new DynamicParameters();
+                parametros.Add("@id", id);
+                var resultado = db.Query<Categoria>(comandoSql, parametros).FirstOrDefault();
+
+                return resultado;
+            }
+
+        }
     }
 }
