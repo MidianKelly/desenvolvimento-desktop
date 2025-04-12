@@ -32,11 +32,48 @@ namespace MultiApps.Models.Repositories1
 
             }
         }
+
+        public bool AtualizarCategoria (Categoria categoria)
+
+
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = @"UPDATE categoria 
+                                   SET nome = @Nome, status = @Status
+                                   WHERE id = @Id";
+                var parametro = new DynamicParameters();
+                parametro.Add("@Id", categoria.Id);
+                parametro.Add("@Nome", categoria.Nome);
+                parametro.Add("@Status", categoria.Status);
+
+            
+               var resposta = db.Execute(comandoSql, parametro);
+                return resposta > 0;            
+            }
+
+        }
+        
+        public bool DeletarCategoria (int id)
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = @"DELETE FROM categoria WHERE id = @Id";
+                
+                var parametro = new DynamicParameters();
+                parametro.Add("@Id", id);
+
+                var resultado = db.Execute(comandoSql, parametro);
+                return resultado > 0;
+               
+            }
+        }
         public List<Categoria> ListarTodasCategorias()
         {
             using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
-                var comandoSql = @"SELECT * FROM categoria";
+                var comandoSql = @"SELECT Id AS id, nome AS Nome, data_criacao AS DataCriacao, data_alteracao AS DataAlteracao, status
+                                  FROM categoria";
                 var resultado = db.Query<Categoria>(comandoSql).ToList();
                 return resultado;
             }
@@ -46,12 +83,12 @@ namespace MultiApps.Models.Repositories1
         {
             using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
-                var comandoSql = @"SELECT id, nome, data_criacao, data_alteracao, status *
+                var comandoSql = @"SELECT id, nome, data_criacao AS DataCriacao, data_alteracao AS DataAlteracao, status 
                                   FROM categoria
-                                  WHERE id = '2'";
+                                  WHERE id = @id";
                 
                 var parametros = new DynamicParameters();
-                parametros.Add("@id", id);
+                parametros.Add("@Id", id);
                 var resultado = db.Query<Categoria>(comandoSql, parametros).FirstOrDefault();
 
                 return resultado;

@@ -10,7 +10,7 @@ namespace MultiApps.Models.Entities
     internal class Produto : EntidadeBase
     {
         public int CategoriaId { get; set; }
-        public string nome { get; set; }
+        public string Nome { get; set; }
         public decimal Preco { get; set; }
         public int QuantidadeEmEstoque { get; set; }
         

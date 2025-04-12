@@ -31,17 +31,23 @@ namespace MultApp.Windows
             categoria.Status = (StatusEnum)cmbStatus.SelectedIndex; 
 
             var categoriaRepository = new CategoriaRepository();
-            var resultado = categoriaRepository.CadastrarCategoria(categoria);
 
-            if (resultado)
+            
+            if (string.IsNullOrEmpty(txtId.Text))
             {
-                MessageBox.Show("Categoria cadastrada com sucesso");
+                var resultado = categoriaRepository.CadastrarCategoria(categoria);
+
+                if (resultado)
+                {
+                    MessageBox.Show("Categoria cadastrada com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao cadastrar categoria");
+                }
+                CarregarTodasCategorias();
             }
-            else
-            {
-                MessageBox.Show("Erro ao cadastrar categoria");
-            }
-            CarregarTodasCategorias();
+            
 
         }
         private void CarregarTodasCategorias()
@@ -106,11 +112,12 @@ namespace MultApp.Windows
 
             // Usar o método para buscar os dados da categoria no banco de dados
             var categoriaRepository = new CategoriaRepository();
-            var categoria = categoriaRepository.MostrarCategoriaPorID(2);
+            var categoria = categoriaRepository.MostrarCategoriaPorID(categoriaId);
 
             if (categoria == null)
             {
                 MessageBox.Show($"Categoria: #{categoriaId} não encontrada");
+                return;
             }
 
             txtId.Text = categoria.Id.ToString();
@@ -119,6 +126,8 @@ namespace MultApp.Windows
             txtDataCriacao.Text = categoria.DataCriacao.ToString("dd/MM/yyyy HH:mm");
             txtUltimaAlteracao.Text = categoria.DataAlteracao.ToString("dd/MM/yyyy HH:mm");
 
+            btnDeletar.Enabled = true;
+            btnSalvar.Text = "Salvar alterações";
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -128,6 +137,26 @@ namespace MultApp.Windows
             txtDataCriacao.Text = string.Empty;
             txtUltimaAlteracao.Text = string.Empty;
             cmbStatus.SelectedIndex = -1;
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            var categoriaId = int.Parse (txtId.Text);
+
+            var categoriaRepository = new CategoriaRepository();
+            var sucesso = categoriaRepository.DeletarCategoria(categoriaId);
+
+            if (sucesso)
+            {
+                MessageBox.Show("Categoria removida com sucesso");
+                CarregarTodasCategorias();
+            }
+            else
+            {
+                MessageBox.Show($"Não foi possível deletar a categoria:{txtNome.Text}");
+            }
+            btnDeletar.Enabled = false;
+            btnLimpar_Click (sender, e);
         }
     }
 }
