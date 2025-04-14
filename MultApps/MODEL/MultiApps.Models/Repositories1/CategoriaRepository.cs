@@ -45,7 +45,7 @@ namespace MultiApps.Models.Repositories1
                 var parametro = new DynamicParameters();
                 parametro.Add("@Id", categoria.Id);
                 parametro.Add("@Nome", categoria.Nome);
-                parametro.Add("@Status", categoria.Status);
+                parametro.Add("@Status", categoria.Status.ToString().ToLower());
 
             
                var resposta = db.Execute(comandoSql, parametro);
@@ -72,7 +72,7 @@ namespace MultiApps.Models.Repositories1
         {
             using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
-                var comandoSql = @"SELECT Id AS id, nome AS Nome, data_criacao AS DataCriacao, data_alteracao AS DataAlteracao, status
+                var comandoSql = @"SELECT id, nome AS Nome, data_criacao AS DataCriacao, data_alteracao AS DataAlteracao, status
                                   FROM categoria";
                 var resultado = db.Query<Categoria>(comandoSql).ToList();
                 return resultado;

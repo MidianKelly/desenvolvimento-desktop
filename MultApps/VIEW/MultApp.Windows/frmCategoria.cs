@@ -45,10 +45,22 @@ namespace MultApp.Windows
                 {
                     MessageBox.Show("Erro ao cadastrar categoria");
                 }
-                CarregarTodasCategorias();
-            }
-            
+            } 
+            else
+            {
+                categoria.Id = int.Parse(txtId.Text);
+                var resultado = categoriaRepository.AtualizarCategoria(categoria);
 
+                if (resultado)
+                {
+                    MessageBox.Show("Categoria atualizada com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao atual categoria");
+                }
+            }
+            CarregarTodasCategorias();
         }
         private void CarregarTodasCategorias()
         {
@@ -74,7 +86,7 @@ namespace MultApp.Windows
            
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "DataCadastro",
+                DataPropertyName = "DataCriacao",
                 HeaderText = "Data de Cadastro"
             }
            );
