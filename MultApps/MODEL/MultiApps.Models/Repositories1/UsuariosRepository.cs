@@ -33,24 +33,67 @@ namespace MultiApps.Models.Repositories1
                 return resultado > 0;
             }
         }
-        public bool AtualizarCategoria(Usuario usuario)
+        public bool AtualizarUsuario(Usuario usuario)
+
+
         {
             using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
                 var comandoSql = @"UPDATE usuario 
-                                   SET nome = @Nome, status = @Status, email = @Email,
-                                   senha = @Senha, cpf = @Cpf
+                                   SET nome = @Nome, status = @Status, cpf = @Cpf, 
+                                   email = @Email,senha = @Senha
                                    WHERE id = @Id";
                 var parametro = new DynamicParameters();
                 parametro.Add("@Id", usuario.Id);
                 parametro.Add("@Nome", usuario.Nome);
                 parametro.Add("@Status", usuario.Status.ToString().ToLower());
-                parametro.Add("@Email", usuario.Email);
+                parametro.Add("@Email", usuario.Email.ToLower());
                 parametro.Add("@Senha", usuario.Senha);
-                parametro.Add("@Cpf", usuario.Cpf);
+
 
                 var resposta = db.Execute(comandoSql, parametro);
                 return resposta > 0;
+            }
+
+        }
+        public bool DeletarUsuario(int id)
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = @"DELETE FROM usuario WHERE id = @Id";
+
+                var parametro = new DynamicParameters();
+                parametro.Add("@Id", id);
+
+                var resultado = db.Execute(comandoSql, parametro);
+                return resultado > 0;
+
+            }
+        }
+        public List<Usuario> ListarTodosUsuario()
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = @"SELECT id, nome, data_cadastro AS DataCadastro, ultimo_acesso AS UltimoAcesso, senha, 
+                           cpf, email 
+                           FROM usuario";  // Assuming the table name is 'usuario'
+                var resultado = db.Query<Usuario>(comandoSql).ToList();  // Mapping the result to Usuario instead of Categoria
+                return resultado;
+            }
+        }
+        public Categoria MostrarUsuariosPorId(int id)
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = @"SELECT id, nome, cpf, email, senha, data_cadastro AS DataCadastro, ultimo_acesso AS UltimoAcesso, status 
+                                  FROM usurio
+                                  WHERE id = @id";
+
+                var parametros = new DynamicParameters();
+                parametros.Add("@Id", id);
+                var resultado = db.Query<Categoria>(comandoSql, parametros).FirstOrDefault();
+
+                return resultado;
             }
 
         }
