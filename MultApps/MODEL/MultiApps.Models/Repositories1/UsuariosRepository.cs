@@ -33,8 +33,19 @@ namespace MultiApps.Models.Repositories1
                 return resultado > 0;
             }
         }
-        public bool AtualizarUsuario(Usuario usuario)
+        public bool EmailExistente (string email)
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = @"SELECT COUNT (*) FROM usuario WHERE email = @Email";
 
+                var parametro = new DynamicParameters();
+                parametro.Add("@Email = email");
+                var resultado = db.ExecuteScalar<int>(comandoSql, parametro);
+                return resultado > 0;
+            }
+        }
+        public bool AtualizarUsuario(Usuario usuario)
 
         {
             using (IDbConnection db = new MySqlConnection(ConnectionString))
@@ -97,5 +108,7 @@ namespace MultiApps.Models.Repositories1
             }
 
         }
+       
+    
     }
 }

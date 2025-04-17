@@ -19,50 +19,112 @@ namespace MultApp.Windows
         public frmCadastrarUsuarios()
         {
             InitializeComponent();
-            CarregarTodosUsuarios();
+            var status = new[] { "inativo", "ativo" };
+            var filtro = new[] { "inativo", "ativo", "todos" };
+            cmbStatus.Items.AddRange(status);
+            cmbListarStatus.Items.AddRange(filtro);
+
+            cmbStatus.SelectedIndex = 1;
         }
-
         private void btnSalvar_Click(object sender, EventArgs e)
+            {
+           
+            try
+            {
+                if (TemCamposEmBranco())
+                {
+                    return;
+                }
+                var usuario = new Usuario();
+                usuario.Nome = txtNome.Text;
+                usuario.Status = (StatusEnum)cmbStatus.SelectedIndex;
+                usuario.Cpf = maskedCpf.Text;
+                usuario.Email = txtEmail.Text;
+                usuario.Senha = txtSenha.Text;
+
+                var usuarioRepository = new UsuariosRepository();
+
+                var emailJaExiste = usuarioRepository.EmailExistente(usuario.Email);
+                if (emailJaExiste)
+                {
+                    MessageBox.Show($"O e-mail {usuario.Email} já está cadastrado");
+                    txtEmail.Focus();
+                    return;
+                }
+
+
+                var sucesso = usuarioRepository.CadastrarUsuarios(usuario);
+
+                if (string.IsNullOrEmpty(txtId.Text))
+                {
+                    if (sucesso)
+                    {
+                        MessageBox.Show("Usuario cadastrado com sucesso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao cadastrar usuario");
+                    }
+                }
+                else
+                {
+                    usuario.Id = int.Parse(txtId.Text);
+                    var sucesso2 = usuarioRepository.AtualizarUsuario(usuario);
+
+                    if (sucesso2)
+                    {
+                        MessageBox.Show("Usuário atualizado com sucesso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao atualizar o usuário");
+                    }
+                }
+                CarregarTodosUsuarios();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }          
+        }
+        private bool TemCamposEmBranco()
         {
-            var usuario = new Usuario();
-            usuario.Nome = txtNome.Text;
-            usuario.Status = (StatusEnum)cmbStatus.SelectedIndex;
-            usuario.Cpf = maskedCpf.Text;
-            usuario.Email = txtEmail.Text;
-            usuario.Senha = txtSenha.Text;
-            
-
-            var usuarioRepository = new UsuariosRepository();
-
-
-            if (string.IsNullOrEmpty(txtId.Text))
+            if (string.IsNullOrEmpty (txtNome.Text))
             {
-                var resultado = usuarioRepository.CadastrarUsuarios(usuario);
+                MessageBox.Show("Campo nome obrigatório");
+                txtNome.Focus();
+                return true; 
+            }
 
-                if (resultado)
-                {
-                    MessageBox.Show("Usuario cadastrado com sucesso");
-                }
-                else
-                {
-                    MessageBox.Show("Erro ao cadastrar usuario");
-                }
-            }
-            else
+            if (string.IsNullOrEmpty(maskedCpf.Text))
             {
-                usuario.Id = int.Parse(txtId.Text);
-                var resultado = usuarioRepository.AtualizarUsuario(usuario);
-                
-                if (resultado)
-                {
-                    MessageBox.Show("Usuário atualizado com sucesso");
-                }
-                else
-                {
-                    MessageBox.Show("Erro ao atualizar o usuário");
-                }
+                MessageBox.Show("Campo CPF obrigatório");
+                maskedCpf.Focus();
+                return true;
             }
-            CarregarTodosUsuarios();
+
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                MessageBox.Show("Campo e-mail obrigatório");
+                txtEmail.Focus();
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(txtSenha.Text))
+            {
+                MessageBox.Show("Campo senha obrigatório");
+                txtSenha.Focus();
+                return true;
+            }
+
+            if (cmbStatus.SelectedIndex == -1)
+            {
+                MessageBox.Show("Campo status obrigatório");
+                cmbStatus.Focus();
+                return true;
+            }
+            return false;
         }
         private void CarregarTodosUsuarios()
         {

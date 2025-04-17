@@ -50,6 +50,8 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbListarStatus = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtUltimoAcesso = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +91,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Snow;
+            this.groupBox1.Controls.Add(this.TxtUltimoAcesso);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cmbStatus);
             this.groupBox1.Controls.Add(this.btnLimpar);
@@ -125,10 +129,6 @@
             // cmbStatus
             // 
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Ativo",
-            "Inativo",
-            "Todos"});
             this.cmbStatus.Location = new System.Drawing.Point(206, 257);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(160, 21);
@@ -138,7 +138,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(202, 128);
+            this.label4.ForeColor = System.Drawing.Color.RosyBrown;
+            this.label4.Location = new System.Drawing.Point(21, 305);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 19);
             this.label4.TabIndex = 16;
@@ -148,8 +149,9 @@
             // 
             this.txtSenha.Location = new System.Drawing.Point(206, 204);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(152, 20);
+            this.txtSenha.Size = new System.Drawing.Size(160, 20);
             this.txtSenha.TabIndex = 15;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -164,7 +166,7 @@
             // maskedCpf
             // 
             this.maskedCpf.Location = new System.Drawing.Point(23, 202);
-            this.maskedCpf.Mask = "000.000.000-00";
+            this.maskedCpf.Mask = "000,000,000-00";
             this.maskedCpf.Name = "maskedCpf";
             this.maskedCpf.Size = new System.Drawing.Size(154, 20);
             this.maskedCpf.TabIndex = 13;
@@ -175,7 +177,7 @@
             this.btnDeletar.Enabled = false;
             this.btnDeletar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeletar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDeletar.Location = new System.Drawing.Point(264, 352);
+            this.btnDeletar.Location = new System.Drawing.Point(264, 381);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(102, 30);
             this.btnDeletar.TabIndex = 12;
@@ -197,7 +199,7 @@
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(145, 352);
+            this.btnSalvar.Location = new System.Drawing.Point(145, 381);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(103, 30);
             this.btnSalvar.TabIndex = 11;
@@ -239,13 +241,13 @@
             // 
             this.txtNome.Location = new System.Drawing.Point(23, 145);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(154, 20);
+            this.txtNome.Size = new System.Drawing.Size(343, 20);
             this.txtNome.TabIndex = 8;
             // 
             // txtCadastro
             // 
             this.txtCadastro.Enabled = false;
-            this.txtCadastro.Location = new System.Drawing.Point(206, 150);
+            this.txtCadastro.Location = new System.Drawing.Point(25, 327);
             this.txtCadastro.Multiline = true;
             this.txtCadastro.Name = "txtCadastro";
             this.txtCadastro.Size = new System.Drawing.Size(152, 20);
@@ -282,15 +284,31 @@
             this.cmbListarStatus.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbListarStatus.ForeColor = System.Drawing.Color.DarkRed;
             this.cmbListarStatus.FormattingEnabled = true;
-            this.cmbListarStatus.Items.AddRange(new object[] {
-            "Ativo",
-            "Inativo",
-            "Todos"});
             this.cmbListarStatus.Location = new System.Drawing.Point(491, 19);
             this.cmbListarStatus.Name = "cmbListarStatus";
             this.cmbListarStatus.Size = new System.Drawing.Size(160, 27);
             this.cmbListarStatus.TabIndex = 18;
             this.cmbListarStatus.Text = "ESCOLHA O STATUS";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.RosyBrown;
+            this.label6.Location = new System.Drawing.Point(202, 305);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(147, 19);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Data do Último acesso";
+            // 
+            // TxtUltimoAcesso
+            // 
+            this.TxtUltimoAcesso.Enabled = false;
+            this.TxtUltimoAcesso.Location = new System.Drawing.Point(206, 327);
+            this.TxtUltimoAcesso.Multiline = true;
+            this.TxtUltimoAcesso.Name = "TxtUltimoAcesso";
+            this.TxtUltimoAcesso.Size = new System.Drawing.Size(152, 20);
+            this.TxtUltimoAcesso.TabIndex = 20;
             // 
             // frmCadastrarUsuarios
             // 
@@ -336,5 +354,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.ComboBox cmbListarStatus;
+        private System.Windows.Forms.TextBox TxtUltimoAcesso;
+        private System.Windows.Forms.Label label6;
     }
 }
