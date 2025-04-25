@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace MultiApps.Models.Enums
 {
-    public enum StatusEnum
-    { 
-        Inativo = 0,
-        Ativo = 1,
+    public enum StatusUsuarios
+    {
+        Ativo = 0,
+        Inativo = 1,
         Todos = 2
     }
 }

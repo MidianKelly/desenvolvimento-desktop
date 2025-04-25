@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MultiApps.Models.Enums
+namespace MultiApps.Models.Entities.Abstract
 {
-    public enum StatusEnum
-    { 
-        Inativo = 0,
-        Ativo = 1,
-        Todos = 2
+    internal class usuario
+    {
     }
 }
