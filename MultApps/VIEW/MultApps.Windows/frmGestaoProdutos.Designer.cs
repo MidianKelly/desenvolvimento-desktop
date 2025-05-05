@@ -162,6 +162,7 @@
             this.btnSalvar.TabIndex = 14;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
             // 
@@ -193,6 +194,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1147, 216);
             this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting_1);
             // 
             // radioBtnAtivo
             // 
@@ -279,6 +281,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmGestaoProdutos";
             this.Text = "frmGestaoProdutos";
+            this.Load += new System.EventHandler(this.frmGestaoProdutos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

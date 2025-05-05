@@ -4,6 +4,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,22 @@ namespace MultApps.Models.Repositories
                 return resposta > 0;
             }
         }
-
+        public List<Produto> ListarTodosProdutos()
+        {
+            using (IDbConnection db = new MySqlConnection(ConnectionString))
+            {
+                var comandoSql = @"SELECT id, 
+                                 nome AS Nome, 
+                                 preco AS Preco, 
+                                 quantidade_estoque AS QuantidadeEmEstoque,
+                                 data_criacao AS DataCadastro,
+                                 data_alteracao AS DataAlteracao,
+                                 status 
+                                 FROM produto;";
+                var resultado = db.Query<Produto>(comandoSql).ToList();
+                return resultado;
+            }
+        }
+        
     }
 }
