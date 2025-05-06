@@ -34,7 +34,7 @@
             this.cmbCategoriaProduto = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescrição = new System.Windows.Forms.TextBox();
-            this.txtPreço = new System.Windows.Forms.TextBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEstoque = new System.Windows.Forms.TextBox();
@@ -105,13 +105,13 @@
             this.txtDescrição.Size = new System.Drawing.Size(634, 85);
             this.txtDescrição.TabIndex = 5;
             // 
-            // txtPreço
+            // txtPreco
             // 
-            this.txtPreço.Location = new System.Drawing.Point(32, 254);
-            this.txtPreço.Multiline = true;
-            this.txtPreço.Name = "txtPreço";
-            this.txtPreço.Size = new System.Drawing.Size(323, 21);
-            this.txtPreço.TabIndex = 6;
+            this.txtPreco.Location = new System.Drawing.Point(32, 254);
+            this.txtPreco.Multiline = true;
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(323, 21);
+            this.txtPreco.TabIndex = 6;
             // 
             // label4
             // 
@@ -192,7 +192,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(-1, 367);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1147, 216);
+            this.dataGridView1.Size = new System.Drawing.Size(1279, 216);
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting_1);
             // 
@@ -258,7 +258,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1124, 622);
+            this.ClientSize = new System.Drawing.Size(1275, 622);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbFiltro);
@@ -272,7 +272,7 @@
             this.Controls.Add(this.txtEstoque);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtPreço);
+            this.Controls.Add(this.txtPreco);
             this.Controls.Add(this.txtDescrição);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbCategoriaProduto);
@@ -296,7 +296,7 @@
         private System.Windows.Forms.ComboBox cmbCategoriaProduto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescrição;
-        private System.Windows.Forms.TextBox txtPreço;
+        private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtEstoque;

@@ -26,14 +26,15 @@ namespace MultApps.Windows
         {
             radioBtnAtivo.ForeColor = Color.Blue;
             radioBtnInativo.ForeColor = Color.Gray;
-            radioBtnAtivo.Checked = false;
+            radioBtnInativo.Checked = false;
+
         }
 
         private void radioBtnInativo_CheckedChanged(object sender, EventArgs e)
         {
             radioBtnInativo.ForeColor = Color.Blue;
             radioBtnAtivo.ForeColor = Color.Gray;
-            radioBtnInativo.Checked = false;
+            radioBtnAtivo.Checked = false;
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -41,7 +42,7 @@ namespace MultApps.Windows
             txtDescrição.Text = string.Empty;
             txtEstoque.Text = string.Empty;
             txtNomeProduto.Text = string.Empty;
-            txtPreço.Text = string.Empty;
+            txtPreco.Text = string.Empty;
             cmbFiltro.SelectedIndex = -1;
             cmbCategoriaProduto.SelectedIndex = -1;
         }
@@ -135,16 +136,24 @@ namespace MultApps.Windows
         {
             var produto = new Produto();
             produto.Nome = txtNomeProduto.Text;
+            produto.Descricao = txtDescrição.Text;
+            produto.Preco = decimal.Parse(txtPreco.Text);
+            produto.QuantidadeEmEstoque = int.Parse (txtEstoque.Text);
             if (radioBtnAtivo.Checked)
+            {
                 produto.Status = StatusEnum.Ativo;
-            else if (radioBtnInativo.Checked)
-                produto.Status = StatusEnum.Inativo;
-            
+            }
 
+            else if (radioBtnInativo.Checked)
+            {
+                produto.Status = StatusEnum.Inativo;
+
+            }
+
+            produto.CategoriaId = Convert.ToInt32(cmbCategoriaProduto.SelectedValue);
             var produtoRepository = new ProdutoRepository();
 
-            if (string.IsNullOrEmpty(txtNomeProduto.Text))
-            {
+          
                 var resultado = produtoRepository.CadastrarProduto(produto);
                 if (resultado)
                 {
@@ -154,21 +163,8 @@ namespace MultApps.Windows
                 {
                     MessageBox.Show("Erro ao cadastrar produto");
                 }
-            }
-            else
-            {               
-                var resultado = produtoRepository.AtualizarProduto(produto);
-
-                if (resultado)
-                {
-                    MessageBox.Show("Produto atualizado com sucesso");
-                }
-                else
-                {
-                    MessageBox.Show("Erro ao atualizar o produto");
-                }
-
-            }
+            
+           
             CarregarTodosOsProdutos();
         }
        

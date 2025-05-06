@@ -19,14 +19,15 @@ namespace MultApps.Models.Repositories
         {
             using (IDbConnection db = new MySqlConnection(ConnectionString))
             {
-                var comandoSql = @"INSERT INTO produto (nome, preco, quantidade_estoque, status)
-                                   VALUES(@Nome, @Preco, @QuantidadeEmEstoque, @Status )";
+                var comandoSql = @"INSERT INTO produto (nome, preco, quantidade_estoque, status, categoria_id)
+                                   VALUES(@Nome, @Preco, @QuantidadeEmEstoque, @Status, @CategoriaId)";
 
                 var parametros = new DynamicParameters();
                 parametros.Add("@Nome", produto.Nome);
                 parametros.Add("@Preco", produto.Preco);
                 parametros.Add("@QuantidadeEmEstoque", produto.QuantidadeEmEstoque);
                 parametros.Add("@Status", produto.Status);
+                parametros.Add("@CategoriaId", produto.CategoriaId);
 
                 var resultado = db.Execute(comandoSql, parametros);
                 return resultado > 0;
